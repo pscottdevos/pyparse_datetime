@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 from setuptools import setup, find_packages
-import pytz
-from dateutil.parser import parse
-from iso8601 import parse_date, ParseError
 
 setup(
     name="PyGrouper",
