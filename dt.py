@@ -14,7 +14,7 @@ def now(tzinfo=None):
 
 
 def parse_datetime(value, tzinfo=None):
-    '''returns an aware datetime in the timezone specified by tzinfo.
+    """returns an aware datetime in the timezone specified by tzinfo.
     If tzinfo is not supplied or is None, the resulting datetime will
     be in the pytz.UTC or iso8601.UTC timezone (as described below)
 
@@ -27,7 +27,7 @@ def parse_datetime(value, tzinfo=None):
 
     if value is an aware datetime, it will be converted to an aware datetime
     in pytz.UTC or in tzinfo it if is provided.
-    '''
+    """
     if isinstance(value, str):
         try:
             aware_dt = parse_date(value)
