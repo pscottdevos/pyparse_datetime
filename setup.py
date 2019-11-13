@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 from setuptools import setup, find_packages
+import pytz
+from dateutil.parser import parse
+from iso8601 import parse_date, ParseError
 
 setup(
     name="PyGrouper",
@@ -12,7 +15,7 @@ setup(
     author_email="scott@bintouch.org",
     license="BSD 4-Clause",
     packages=find_packages(exclude=["tests", "tests.*"]),
-    install_requires=[],
+    install_requires=[pytz, dateutil, iso8601],
     keywords="UUID uuid human readable",
     url="https://github.com/pscottdevos/pyparse_datetime",
 )
