@@ -12,7 +12,7 @@ setup(
     author_email="scott@bintouch.org",
     license="BSD 4-Clause",
     packages=find_packages(exclude=["tests", "tests.*"]),
-    install_requires=["pytz", "dateutil", "iso8601"],
+    install_requires=["pytz", "python_dateutil", "iso8601"],
     keywords="UUID uuid human readable",
     url="https://github.com/pscottdevos/pyparse_datetime",
 )
