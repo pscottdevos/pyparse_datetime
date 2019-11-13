@@ -2,7 +2,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="PyGrouper",
+    name="PyParseDateTime",
     version="0.1",
     description=(
         "Function that parses ISO-formated datetime strings, naive datetimes and "
