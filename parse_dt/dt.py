@@ -37,7 +37,7 @@ def parse_datetime(value, tzinfo=None):
         except ParseError:
             aware_dt = pytz.utc.localize(parse(value))
     elif isinstance(value, numbers.Number):
-        aware_dt = datetime.fromtimestamp(value, tz=pytz.utc)
+        aware_dt = datetime.fromtimestamp(value, tz=tzinfo or pytz.utc)
     else:
         aware_dt = value if value.tzinfo else pytz.utc.localize(value)
     if tzinfo:
