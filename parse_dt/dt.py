@@ -1,8 +1,11 @@
+import numbers
 from datetime import datetime
 
 import pytz
 from dateutil.parser import parse
 from iso8601 import parse_date, ParseError
+
+__all__ = ['now', 'parse_datetime']
 
 
 def now(tzinfo=None):
@@ -33,6 +36,8 @@ def parse_datetime(value, tzinfo=None):
             aware_dt = parse_date(value)
         except ParseError:
             aware_dt = pytz.utc.localize(parse(value))
+    elif isinstance(value, numbers.Number):
+        aware_dt = datetime.fromtimestamp(value, tz=pytz.utc)
     else:
         aware_dt = value if value.tzinfo else pytz.utc.localize(value)
     if tzinfo:
