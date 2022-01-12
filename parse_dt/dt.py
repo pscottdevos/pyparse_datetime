@@ -32,6 +32,13 @@ def parse_datetime(value, tzinfo=None):
     in pytz.UTC or in tzinfo it if is provided.
     """
     if isinstance(value, str):
+        if "T" not in value:
+            if "/" in value:
+                dd, mm, yy_time = value.split("/")
+                yy, tt = yy_time.split(" ")
+                value = f"{yy}-{mm}-{dd}T{tt}"
+            else:
+                value = "T".join(value.split())
         try:
             aware_dt = parse_date(value)
         except ParseError:
