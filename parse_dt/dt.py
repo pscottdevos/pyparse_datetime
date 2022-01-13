@@ -34,7 +34,7 @@ def parse_datetime(value, tzinfo=None):
     if isinstance(value, str):
         if "T" not in value:
             if "/" in value:
-                dd, mm, yy_time = value.split("/")
+                mm, dd, yy_time = value.split("/")
                 yy, tt = yy_time.split(" ")
                 value = f"{yy}-{mm}-{dd}T{tt}"
             else:
